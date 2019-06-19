@@ -1,0 +1,60 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+<link rel="stylesheet" href="{% static 'vendors/selectize/dist/css/selectize.css' %}">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendors/selectize/dist/js/selectize.min.js' %}"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<link href="{% static 'css/form-css.css' %}" rel="stylesheet">
+
+
+<title>gekkoterm der Termfinder</title>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse demo-menu" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-demo-menu-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="/">Gekkoterm</a> </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-demo-menu-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Üyelik işlemleri <span class="caret"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href="/user/register">Kayıt olun</a></li>
+            <li><a href="/user/login">Giriş Yapın</a></li>
+            
+          </ul>
+		  <li><a href="/about/">Proje hakkında</a></li>
+            <li><a href="/contact/">Bize Ulaşın</a></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+{% block body %}
+
+{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+</body>
+</html>

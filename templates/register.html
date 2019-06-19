@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="main">
+<div class="container" style="margin-top:40px">
+<div class="col-md-6">
+	<div class="row">
+		<div align="center" style="padding: 0px 0px 0px 0px">
+			<img src="{% static 'logo/logo.png' %}" height="216">
+		</div>
+	</div>
+</div>
+<div class="col-md-6">
+<div class="sm-form">
+  <div class="sm-form">
+    <div class="panel panel-default flat-form" id="sm-form1">
+      <div class="panel-heading">
+        <div class="panel-title text-center">
+          <h1 class="title">Kayıt olun </h1>
+		  
+		  <h4 style="color:#ff0000"></h4>
+		  
+        </div>
+      </div>
+      <div class="panel-body">
+        <form method="post" action="" id="register_form">
+          <div class="form-group">
+            <label for="name" class="control-label">Adınız Soyadınız</label>
+            <div class="">
+              <div class="input-group"> <span class="input-group-addon"><i class="icon-user icons" aria-hidden="true"></i></span>
+                <input type="text" class="form-control checkit" name="namesurname" id="namesurname" value=""  placeholder="Adınız Soyadınız" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="control-label">E-Posta</label>
+            <div class="">
+              <div class="input-group"> <span class="input-group-addon"><i class="icon-envelope icons" aria-hidden="true"></i></span>
+                <input type="email" class="form-control checkit" name="email" id="email"  placeholder="E-Posta" value="" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="username" class="control-label">Kullanıcı Adınız</label>
+            <div class="">
+              <div class="input-group"> <span class="input-group-addon"><i class="icon-people icons" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" name="username" id="username"  placeholder="Kullanıcı Adınız" value="" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label">Şifreniz</label>
+            <div class="">
+              <div class="input-group"> <span class="input-group-addon"><i class="icon-key icons" aria-hidden="true"></i></span>
+                <input type="password" class="form-control checkit" name="password" id="password"  placeholder="Şifreniz" value="" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="confirm" class="control-label">Şifreniz Tekrar</label>
+            <div class="">
+              <div class="input-group"> <span class="input-group-addon"><i class="icon-key icons" aria-hidden="true"></i></span>
+                <input type="password" class="form-control checkit" name="confirm" id="confirm"  placeholder="Şifreniz Tekrar" value="" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group text-right"> <br>
+            <button type="button" class="btn btn-danger login-button" onclick="javascript: window.location.href = 'login.php'">İPTAL ET</button>
+            <button type="submit" class="btn btn-primary login-button" onclick="return pwctrl();">KAYIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <!-- Content Here -->
+</div>
+
+{% endblock  %}

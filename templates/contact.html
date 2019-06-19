@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+    <div class="col-md-6">
+      <div class="row">
+        <img src="{% static 'logo/logo.png' %}" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="form-group">
+          <label for="de">Adınız Soyadınız:</label>
+          <input type="text" class="form-control" id="adsoyad" name="adsoyad" required>
+        </div>
+        <div class="form-group">
+          <label for="de">Eposta adresiniz:</label>
+          <input type="text" class="form-control" id="iletisim" name="iletisim" required>
+        </div>
+
+        <div class="form-group">
+          <textarea class="form-control" id="msg" name="msg" placeholder="Mesajınız" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="form-control" id="gonder" name="gonder" value="Gönder">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock  %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div align="center">
+<img src="{% static 'logo/logo.png' %}" height="216">
+</div>
+
+<div class="col-md-12">
+<div class="row">
+<div class="container">
+<div class="bs-margin">
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#sectionA">Deutsch>Turkisch</a></li>
+    <li><a data-toggle="tab" href="#sectionB">Türkçe>Almanca</a></li>
+  </ul>
+  
+  <div class="tab-content">
+  
+    <div id="sectionA" class="tab-pane fade in active">
+      <h4>Suchen</h4>
+      <div class="md-col-12">
+      <form id="Search" class="form-inline" action="dict_new.php" method="get">
+        <input type="hidden" name="dict" value="de-tr">
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchInput" onkeyup="javascript:autoComp();" name="s" value="" lang="ja" x-webkit-speech speech onwebkitspeechchange="$('#Search').submit();" onspeechchange="$('#Search').submit();" tabindex="1" autocomplete="off" autocorrect="off" autocapitalize="off" autofocus>
+          <span class="input-group-btn">
+          <button id="searchButton" class="btn btn-warning" tabindex="3" type="submit"><i class="icon-search"></i><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div>
+        <div id="searching" style="display:none;">Searching...</div>
+      </form>
+    </div>
+      <hr>
+     
+    </div>
+	
+    <div id="sectionB" class="tab-pane fade in">
+      <h4>Ara</h4>
+      <form id="Search" class="form-inline" action="dict.php" method="get">
+        <input type="hidden" name="dict" value="tr-de">
+        <div class="input-group">
+          <input type="text" class="form-control" id="searchInput" name="s" value="" lang="ja" x-webkit-speech speech onwebkitspeechchange="$('#Search').submit();" onspeechchange="$('#Search').submit();" tabindex="1" autocomplete="off" autocorrect="off" autocapitalize="off" autofocus>
+          <span class="input-group-btn">
+          <button id="searchButton" class="btn btn-warning" tabindex="3" type="submit"><i class="icon-search"></i><span class="glyphicon glyphicon-search"></span></button>
+          </span> </div>
+        <div id="searching" style="display:none;">Searching...</div>
+      </form>
+      <hr>
+    </div>
+	</div>
+	</div>
+	</div>
+  </div>
+</div>
+
+
+
+{% endblock  %}
