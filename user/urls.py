@@ -4,6 +4,9 @@ urlpatterns = [
     
     path('register',registerView),
     path('login',loginView),
-    path('addWords',addWordsView),
+    path('addWord',wordCreate),
+    path('getWord',getWordsView),
+    path('updateWord/<int:id>',wordUpdate),
+    path('deleteWord/<int:id>',wordDelete),
     
 ]

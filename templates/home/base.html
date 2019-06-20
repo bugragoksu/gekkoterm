@@ -37,7 +37,7 @@
           <ul class="dropdown-menu forAnimate" role="menu">
             <li><a href="/user/register">Kayıt olun</a></li>
             <li><a href="/user/login">Giriş Yapın</a></li>
-            
+            {{ request.user.get_full_name }}
           </ul>
 		  <li><a href="/about/">Proje hakkında</a></li>
             <li><a href="/contact/">Bize Ulaşın</a></li>

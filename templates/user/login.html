@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %}
+{% extends 'user/userBase.html' %}
 {% load static %}
 
 {% block body %}
@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="panel-body">
-            <form role="form" action="/user/addWords" method="get">
+            <form role="form" action="/user/addWord" method="get">
               <fieldset>
               <div class="form-msg">Kayıtlı hesabınızla giriş yapın:</div>
               <div class="row">

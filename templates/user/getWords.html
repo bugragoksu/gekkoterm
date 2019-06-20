@@ -1,0 +1,60 @@
+{% extends 'user/userBase.html' %}
+{% load static %}
+
+{% block body %}
+
+<style type="text/css">
+body {
+	padding-top: 0px;
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+</style>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+<link rel="stylesheet" href="{% static 'css/form-style.css' %}">
+
+
+<body>
+<? include "logged_header.php" ?>
+<div class="col-md-12">
+	<table>
+  <tr>
+    <th>Ekleyen</th>
+    <th>Kelime</th>
+    <th>Düzenle</th>
+  </tr>
+<? 
+	while($row_new=mysqli_fetch_assoc($sql_new)) {?>
+	<tr>
+    <td><?=$row_new["ekleyen"] ?></td>
+    <td><?=$row_new["de"] ?></td>
+    <td><a href="inputKey_Edit.php?id=<?=$row_new["id"]?>">Düzenle</a></td>
+  </tr>
+<? } ?>
+</table>
+</div>
+</form>
+</body>
+</html>
+
+
+
+
+{% endblock %}
