@@ -9,3 +9,8 @@ def registerView(request):
 
 def loginView(request):
     return render(request,'user/login.html',{})
+
+
+
+def addWordsView(request):
+    return render(request,'user/addWords.html',{})

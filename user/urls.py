@@ -4,5 +4,6 @@ urlpatterns = [
     
     path('register',registerView),
     path('login',loginView),
+    path('addWords',addWordsView),
     
 ]

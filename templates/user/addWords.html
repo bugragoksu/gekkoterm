@@ -1,17 +1,21 @@
+{% extends 'user/userBase.html' %}
 {% load static %}
+
+{% block body %}
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/bootstrap-theme.min.css' %}">
-<link rel="stylesheet" href="{% static 'assets/vendors/selectize/dist/css/selectize.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+<link rel="stylesheet" href="{% static 'vendors/selectize/dist/css/selectize.css' %}">
 
-<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/vendors/selectize/dist/js/selectize.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendors/selectize/dist/js/selectize.min.js' %}"></script>
 <style type="text/css">
 body {
 	padding-top: 0px;
@@ -19,7 +23,7 @@ body {
 	background-color: #eee;
 }
 </style>
-<link rel="stylesheet" href="{% static 'assets/css/form-style.css' %}">
+<link rel="stylesheet" href="{% static 'css/form-style.css' %}">
 
 <title>MEÜ-Çeviri Bölümü Terimler Sözlüğü - Almanca, Türkçe</title>
 <script src="ckeditor/ckeditor.js"></script>
@@ -288,4 +292,8 @@ var initEditors = ( function() {
 initEditors();
 </script>
 	
-<
+</body>
+</html>
+
+
+{% endblock  %}
