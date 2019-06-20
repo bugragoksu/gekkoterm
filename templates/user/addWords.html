@@ -1,0 +1,291 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap-theme.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/vendors/selectize/dist/css/selectize.css' %}">
+
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/vendors/selectize/dist/js/selectize.min.js' %}"></script>
+<style type="text/css">
+body {
+	padding-top: 0px;
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+</style>
+<link rel="stylesheet" href="{% static 'assets/css/form-style.css' %}">
+
+<title>MEÜ-Çeviri Bölümü Terimler Sözlüğü - Almanca, Türkçe</title>
+<script src="ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="{% static 'ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css' %}">
+<link rel="stylesheet" href="{% static 'ckeditor/samples/css/samples.css' %}">
+</head>
+
+<body>
+<div class="col-md-12">
+<form role="form" method="post" action="inputkeyPost.php">
+<!--<div class="col-md-4" align="center">
+<div style="position:relative; vertical-align:middle">
+	<img src="assets/images/arrows.png">
+</div>
+</div>-->
+<div class="col-md-6">
+	<div class="form-style-5">
+	<fieldset>
+	<legend><span class="number">1</span> Eingeben</legend>
+	<label for="kategori">Fachgebiet :</label>
+	<select class="form-control" id="kategori" name="kategori" required>
+		<option  value ="transp.">Transport/Logistik</option>
+		<option  value ="Univ. und Studium">Universität/Studium</option>
+		<option  value ="anat.">Anatomie</option>
+		<option  value ="verw.">Verwaltung</option>
+		<option  value ="kunst">Kunst</option>
+		<option  value ="phys.">Physik</option>
+		<option  value ="elek.">Elektrizität</option>
+		<option  value ="geologie">Geologie</option>
+		<option  value ="math.">Mathematik</option>
+		<option  value ="med.">Medizin</option>
+		<option  value ="thea.">Theater</option>
+		<option  value ="landwirtschaft">Landwirtschaft</option>
+		<option  value ="telekom.">Telekommunikation</option>
+		<option  value ="arch.">Architektur</option>
+		<option  value ="soziol.">Soziologie</option>
+		<option  value ="kino">Kino & TV</option>
+		<option  value ="ingenieurwesen">Ingenieurwesen</option>
+		<option  value ="sport.">Sport</option>
+		<option  value ="chem.">Chemie</option>
+		<option  value ="jura/recht">Jura/Recht</option>
+		<option  value ="gesch.">Geschichte</option>
+		<option  value ="bau.">Bauwesen</option>
+		<option  value ="fotog.">Fotografie</option>
+		<option  value ="statist.">Statistik</option>
+		<option  value ="meteo.">Meteorologie</option>
+		<option  value ="min.">Mineralogie</option>
+		<option  value ="luft.">Luftfahrt</option>
+		<option  value ="pol.">Politik</option>
+		<option  value ="myth.">Mythologie</option>
+		<option  value ="druckwesen">Druckwesen</option>
+		<option  value ="finan.">Finanzwelt</option>
+		<option  value ="kochkunst">Kochkunst/Essen/Gastronomie</option>
+		<option  value ="lit.">Literatur</option>
+		<option  value ="tech.">Technik</option>
+		<option  value ="pharm.">Pharmazie</option>
+		<option  value ="umwelt">Umwelt</option>
+		<option  value ="med.">Medizin</option>
+		<option  value ="informatik">Informatik</option>
+		<option  value ="sprachwissenschaft">Sprachwissenschaften</option>
+		<option  value ="biol.">Biologie</option>
+		<option  value ="bildungswesen">Bildungswesen</option>
+		<option  value ="verpackung">Verpackung</option>
+		<option  value ="geog.">Geografie</option>
+		<option  value ="philos.">Philosophie</option>
+		<option  value ="textil.">Textilindustrie</option>
+		<option  value ="verlagswesen">Verlagswesen</option>
+		<option  value ="naut.">Nautik</option>
+		<option  value ="bot.">Botanik</option>
+		<option  value ="wirt.">Wirtschaft/Ökonomie</option>
+		<option  value ="mil.">Militär</option>
+		<option  value ="mus.">Musik</option>
+		<option  value ="astr.">Astronomie</option>
+		<option  value ="vers.">Versicherungswesen</option>
+		<option  value ="zool.">Zoologie</option>
+		<option  value ="mach.">Maschinenbau</option>
+		<option  value ="psych.">Psychologie</option>
+		<option  value ="autom.">Automobilbranche</option>
+		<option  value ="rel.">Religion</option>
+	</select>
+
+	
+	<legend><span class="number">2</span> Deutsch</legend>
+	
+	<input type="text" class="form-control" id="de" name="de" required>
+	
+	<legend><span class="number">3</span>Wortart oder Artikel</legend>
+	<select class="form-control" id="artikel" name="artikel">
+		<option value="der">-m (Maskulin)</option>
+		<option value="die">-f (Feminin)</option>
+		<option value="das">-n (Neutrum)</option>
+		<option value="(pl)">Plural</option>
+		<option value=".">Verb</option>
+		<option value="sıfat">Adjektive</option>
+	<option value="zarf">Adverb</option>
+	</select>
+	
+	<label for="plural_wort_status">Plural :</label>
+	<select name="plural_wort_status" id="plural_wort_status" onchange="pluralSec();" required>
+	<option value="" selected>Auswahlen</option>
+	<option value="-n">-n</option>
+	<option value="-e">-e</option>
+	<option value="-en">-en</option>
+	<option value="-s">-s</option>
+	<option value="-">-</option> 
+	<option value="kein pl">kein pl</option>
+	</select>
+	
+	<input type="text" class="form-control" id="plural_wort" name="plural_wort">
+	
+	<script>
+	
+	function pluralSec() {
+	if($('#plural_wort_status').val() != "") { $("#plural_wort").prop('disabled', true); $('#plural_wort').hide();  }
+	else { $("#plural_wort").prop('disabled', false); $('#plural_wort').focus();$('#plural_wort').show();  }
+	}
+	</script>
+	</fieldset>
+	<fieldset>
+	<legend><span class="number">4</span>Synonym(e) (Trennen Sie mit ",")</legend>
+	<input type="text" class="form-control" id="synm_de" name="synm_de" placeholder="z.B: durchgeben, ankündigen, ausrufen" >
+	</fieldset>
+	<fieldset>
+	<legend><span class="number">5</span>Abkürzung(en): (Trennen Sie mit ",")</legend>
+	<input type="text" class="form-control" id="abz_de" name="abz_de">
+	</fieldset>
+	<fieldset>
+	<legend><span class="number">6</span>Alternative Schreibweise(n):</legend>
+	<input type="text" class="form-control" id="asw_de" name="asw_de">
+	</fieldset>
+	
+	<fieldset>
+	<legend><span class="number">7</span>ANMERKUNGEN</legend>
+	<!--<textarea name="de_def" placeholder="Deutsche Definitation"></textarea>-->
+	<textarea id="de_def" name="de_def">
+		
+	</textarea>
+	</fieldset>
+	<!--<fieldset>
+	<legend><span class="number">8</span> Quelle</legend>
+	<label for="tr">Quelle eingeben</label>
+	<input type="text" class="form-control" id="quelle" name="quelle">
+	</fieldset><!---->
+	<!--<fieldset>
+	<legend><span class="number">8</span> Medya</legend>
+	<label for="tr">Youtube URL Örnek Video:</label>
+	<input type="text" class="form-control" id="youtube_url" name="youtube_url">
+	</fieldset><!---->
+	<fieldset>
+	<legend><span class="number">8</span>KONTEXT</legend>
+	<!--<textarea name="de_def" placeholder="Deutsche Definitation"></textarea>-->
+	<textarea id="kontext_de" name="kontext_de">
+		
+	</textarea>
+	</fieldset>
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="form-style-5">
+	
+	<fieldset>
+	<legend><span class="number">9</span>Kelime Bilgileri</legend>
+	<label for="tr">Türkçe Anlam:</label>
+	<input type="text" class="form-control" id="tr" name="tr" required>
+	</fieldset>
+	
+	<fieldset>
+	<legend><span class="number">10</span>eş anlamlı kelime(ler)</legend>
+	<label for="tr_esanlam">eş anlamlı kelime(ler)</label>
+	<input type="text" class="form-control" id="synm_tr" name="synm_tr">
+	</fieldset>
+	
+	<fieldset>
+	<legend><span class="number">11</span>kısaltma(lar)</legend>
+	<label for="tr">kısaltma(lar)</label>
+	<input type="text" class="form-control" id="abz_tr" name="abz_tr">
+	</fieldset>
+	
+	<fieldset>
+	<legend><span class="number">12</span>alternatif yazım(lar)</legend>
+	<label for="tr">alternatif yazım(lar)</label>
+	<input type="text" class="form-control" id="asw_tr" name="asw_tr">
+	</fieldset>
+	
+	
+	<fieldset>
+	<legend><span class="number">13</span>Türkçe Açıklama</legend>
+	<textarea id="tr_def" name="tr_def">
+		
+	</textarea>
+	</fieldset>
+	<!--<fieldset>
+	<legend><span class="number">8</span> Kaynak</legend>
+	<label for="tr_kaynak">Kaynakları giriniz</label>
+	<input type="text" class="form-control" id="tr_kaynak" name="tr_kaynak">
+	</fieldset><!---->
+	<fieldset>
+	<legend><span class="number">14</span>BAĞLAM</legend>
+	<textarea id="kontext_tr" name="kontext_tr">
+		
+	</textarea>
+	</fieldset>
+	<input type="submit" value="KELİME EKLE / WORT HINZUFÜGEN " />
+	</div>
+</div>
+</div>
+</form>
+<script>
+/**
+ * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+/* exported initSample */
+
+if ( CKEDITOR.env.ie && CKEDITOR.env.version < 9 )
+	CKEDITOR.tools.enableHtml5Elements( document );
+
+// The trick to keep the editor in the sample quite small
+// unless user specified own height.
+CKEDITOR.config.height = 450;
+CKEDITOR.config.width = 'auto';
+
+var initEditors = ( function() {
+	var wysiwygareaAvailable = isWysiwygareaAvailable(),
+		isBBCodeBuiltIn = !!CKEDITOR.plugins.get( 'bbcode' );
+
+	return function() {
+		var editorElement = CKEDITOR.document.getById( 'tr_def' );
+		var editorElement_deu = CKEDITOR.document.getById('de_def');
+		var editorElement_kontext = CKEDITOR.document.getById('kontext_de');
+		var editorElement_baglam = CKEDITOR.document.getById('kontext_tr');
+		
+
+		if ( isBBCodeBuiltIn ) {
+			editorElement.setHtml('Açıklama metniniz\n\n');
+			editorElement_deu.setHtml('Anmerkungen \n\n');
+		}
+
+		// Depending on the wysiwygarea plugin availability initialize classic or inline editor.
+		if ( wysiwygareaAvailable ) {
+			CKEDITOR.replace( 'tr_def' );
+			CKEDITOR.replace( 'de_def' );
+			CKEDITOR.replace( 'kontext_de' );
+			CKEDITOR.replace( 'kontext_tr' );
+
+		} else {
+			editorElement.setAttribute( 'contenteditable', 'true' );
+			CKEDITOR.inline( 'tr_def' );
+			CKEDITOR.inline( 'de_def' );
+			CKEDITOR.inline( 'kontext_de' );
+			CKEDITOR.inline( 'kontext_tr' );
+			// TODO we can consider displaying some info box that
+			// without wysiwygarea the classic editor may not work.
+		}
+	};
+
+	function isWysiwygareaAvailable() {
+		if ( CKEDITOR.revision == ( '%RE' + 'V%' ) ) {
+			return true;
+		}
+
+		return !!CKEDITOR.plugins.get( 'wysiwygarea' );
+	}
+} )();
+initEditors();
+</script>
+	
+<
